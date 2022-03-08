@@ -11,7 +11,7 @@ const quoteReducer = (state=INITIAL_STATE, action) => {
     switch(action.type){
         case QuoteTypes.GET_NEW_QUOTE:{
             const DerivedNewQuote = getNewQuotes();
-            return {DerivedNewQuote,...state};
+            return {DerivedNewQuote};
         }
         default:{
             return {...state}
