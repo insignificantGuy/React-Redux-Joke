@@ -11,6 +11,7 @@ import {getNewQuote} from '../../actions/quote.actions';
 const HeadLines = () =>{
     const dispatch = useDispatch();
     const state = useSelector(state => state.quote);
+    console.log(state);
     return(
         <React.Fragment>
             <h3>{state}</h3>

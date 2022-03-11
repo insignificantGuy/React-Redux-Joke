@@ -6,9 +6,11 @@ import { put, takeEvery } from 'redux-saga/effects'
 
 export function* getNewQuotes() {
     try{
-        const newQuote = yield axios.get(url.BASE_URL);
-        console.log(newQuote.data.joke);
-        yield put({type:QuoteTypes.SHOW_NEW_JOKE,quote:newQuote.data.joke})
+        console.log("Passed to Me");
+        console.log(url.BASE_URL);
+        const newQuote = yield axios.get('https://jsonplaceholder.typicode.com/users');
+        console.log(newQuote);
+        yield put({type:QuoteTypes.SHOW_NEW_JOKE,quote:newQuote.data[0].name})
     }
     catch(err){
         console.log(err);
