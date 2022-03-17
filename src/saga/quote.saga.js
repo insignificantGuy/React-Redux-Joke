@@ -4,16 +4,13 @@ import url from '../URL/url';
 import { put, takeEvery } from 'redux-saga/effects'
 
 
-export function* getNewQuotes() {
+function* getNewQuotes() {
     try{
-        console.log("Passed to Me");
-        console.log(url.BASE_URL);
-        const newQuote = yield axios.get('https://jsonplaceholder.typicode.com/users');
-        console.log(newQuote);
-        yield put({type:QuoteTypes.SHOW_NEW_JOKE,quote:newQuote.data[0].name})
+        const newQuote = yield axios.get(url.BASE_URL);
+        yield put({type:QuoteTypes.SHOW_NEW_JOKE,quote:newQuote.data.joke})
     }
     catch(err){
-        console.log(err);
+        yield put({type:QuoteTypes.SHOW_ERROR_MESSAGE,quote:'Some Error Occured'});
     }
 };
 
