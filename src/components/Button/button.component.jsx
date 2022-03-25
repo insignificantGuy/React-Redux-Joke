@@ -11,10 +11,9 @@ import {getNewQuote} from '../../actions/quote.actions';
 const HeadLines = () =>{
     const dispatch = useDispatch();
     const state = useSelector(state => state.quote);
-    console.log(state);
     return(
         <React.Fragment>
-            <h3>{state}</h3>
+            <h3>{state.quote}</h3>
             <br/>
             <button className='getQuote' onClick={()=>dispatch(getNewQuote())}>Get Quote</button>
         </React.Fragment>

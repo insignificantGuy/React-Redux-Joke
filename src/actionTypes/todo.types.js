@@ -1,0 +1,7 @@
+const ToDoTypes = {
+    INSERT_NEW_TEXT: 'INSERT_NEW_TEXT',
+    SHOW_TODO_LIST: 'SHOW_TODO_LIST',
+    SHOW_ERROR_MESSAGE: 'SHOW_ERROR_MESSAGE'
+}
+
+export default ToDoTypes;

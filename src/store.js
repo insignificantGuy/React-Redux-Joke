@@ -1,17 +1,17 @@
 import {createStore, applyMiddleware} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import quoteReducer from'./reducers/quote.reducers';
+import rootReducer from './reducers/root.reducer';
 
-import mysaga from './saga/quote.saga';
+import rootSaga from './saga/root.saga';
 import thunk from 'redux-thunk';
 
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [thunk,sagaMiddleware]; 
 
-const store = createStore(quoteReducer,applyMiddleware(...middlewares));
+const store = createStore(rootReducer,applyMiddleware(...middlewares));
 
-sagaMiddleware.run(mysaga);
+sagaMiddleware.run(rootSaga);
 
 export default store;
 

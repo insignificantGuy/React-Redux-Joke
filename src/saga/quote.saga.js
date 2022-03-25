@@ -17,6 +17,6 @@ function* getNewQuotes() {
 //use Saga Here, Don't use Promises
 //Create another URL file and import that and use here.
 
-export default function* mysaga(){
+export default function* quoteSaga(){
     yield takeEvery('GET_NEW_QUOTE',getNewQuotes);
 }
